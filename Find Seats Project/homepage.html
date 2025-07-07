@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-logo img {
+            width: 140px;
+            height: auto;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-name {
+            margin-right: 10px;
+        }
+
+        .profile-city select {
+            background: none;
+            color: #fff;
+            border: none;
+            font-size: 14px;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-logo img {
+            margin-right: 10px;
+        }
+
+        .image-box {
+            height: 50vh;
+            background-color: #f2f2f2;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container {
+            display: flex;
+            animation: floatImages 30s linear infinite;
+        }
+
+        .image {
+            flex: 0 0 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-number {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .slider-button.left {
+            left: 10px;
+        }
+
+        .slider-button.right {
+            right: 10px;
+        }
+
+        .seat-categories {
+            text-align: left;
+            margin: 20px;
+        }
+
+        .seat-categories h2 {
+            font-weight: bold;
+            text-align: left;
+            margin-left: 50px;
+        }
+
+        .seat-category {
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .seat-category img {
+            max-width: 100px;
+        }
+
+        .seat-category-title {
+            margin-top: 10px;
+        }
+        .location {
+      width: 100%;
+      height: 400px;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+    .content {
+      clear: both; /* Clear any floated elements inside */
+    }
+
+    .content img {
+      float: left; /* Float the image to the left */
+      margin-right: 10px; /* Add some spacing to separate the image from text */
+    }
+        @keyframes floatImages {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(25%);
+            }
+            50% {
+                transform: translateX(50%);
+            }
+            75% {
+                transform: translateX(75%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="profile">
+            <div class="profile-image">
+                <img src="kindpng_214439.png" alt="Your Name's Profile Image">
+            </div>
+            <div class="profile-info">
+                <div class="profile-name">
+                    Your Name
+                </div>
+                <div class "profile-city">
+                    <select>
+                        <option value="Kanpur">Kanpur</option>
+                        <option value="Other City">Other City</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="brand-logo">
+            <img src="splash_icon.png" alt="Brand Logo">
+        </div>
+        <div class="icons">
+            <div class="search-logo">
+                <img src="search.png" alt="Search Logo">
+            </div>
+            <img src="notification.png" alt="Notification Logo">
+        </div>
+    </header>
+
+    <div class="image-box">
+        <div class="slider-button left" id="prevButton" onclick="changeImage(-1)">&#9665;</div>
+        <div class="slider-button right" id="nextButton" onclick="changeImage(1)">&#9655;</div>
+        <div class="image-container">
+            <div class="image">
+                <img src="e3nq3kmz5tsown2e5lzk.png" alt="Image 1">
+                <div class="image-number">1 of 3</div>
+            </div>
+            <div class="image">
+                <img src="qyc7maswqqpftl8pensr.png" alt="Image 2">
+                <div class="image-number">2 of 3</div>
+            </div>
+            <div class="image">
+                <img src="e3nq3kmz5tsown2e5lzk.png" alt="Image 3">
+                <div class="image-number">3 of 3</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seat-categories">
+        <h3>SEAT CATEGORIES</h3>
+        <div class="seat-category">
+            <img src="film.png" alt="Category 1">
+            <p class="seat-category-title">Movies</p>
+        </div>
+        <div class="seat-category">
+            <img src="spotlights.png" alt="Category 2">
+            <p class="seat-category-title">Events</p>
+        </div>
+        <div class="seat-category">
+            <img src="theater_masks.png" alt="Category 3">
+            <p class="seat-category-title">Plays</p>
+        </div>
+        <div class="seat-category">
+            <img src="running.png" alt="Category 4">
+            <p class="seat-category-title">Sports</p>
+        </div>
+        <div class="seat-category">
+            <img src="flag.png" alt="Category 5">
+            <p class="seat-category-title">Activities</p>
+        </div>
+    </div>
+
+    <div class="seat-categories">
+        <h3>RECOMMENDED SEATS</h3>
+        <div class="seat-category">
+            <img src="yaariyan 2.png" alt="Category 1">
+            <p class="seat-category-title">Yaariyan 2</p>
+        </div>
+        <div class="seat-category">
+            <img src="ganapath.png" alt="Category 2">
+            <p class="seat-category-title">Ganapath - A Hero Is Born</p>
+        </div>
+        <div class="seat-category">
+            <img src="leo.png" alt="Category 3">
+            <p class="seat-category-title">Leo</p>
+        </div>
+        <div class="seat-category">
+            <img src="tejas.png" alt="Category 4">
+            <p class="seat-category-title">Tejas</p>
+        </div>
+        <div class="seat-category">
+            <img src="fukrey 3.png" alt="Category 5">
+            <p class="seat-category-title">Fukrey 3</p>
+        </div>
+
+    <div class="seat-categories">
+        <h3>NEARBY THEATRES</h3>
+    <div class="location">
+        <iframe
+          src="https://www.google.com/maps/d/u/0/edit?mid=1CNGC6i7My0OqfB6DqXnxK4H9bOCELII&usp=sharing"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          style="border:0;"
+          allowfullscreen=""
+        ></iframe>
+      </div>
+<br><br><br>
+      <div class="content">
+        <img src="spotlights.png" alt="Spotlights">
+        <h3>EVENTS</h3>
+      </div>
+      <div class="seat-category">
+        <img src="event 1.png" alt="Category 1">
+        <p class="seat-category-title">Stand-up Comedy Show: With Love Jaspreet</p>
+    </div>
+    <div class="seat-category">
+        <img src="event 2.png" alt="Category 2">
+        <p class="seat-category-title">Talk Session in Business (Ft. Andreas Kaplan)</p>
+    </div>
+    <div class="seat-category">
+        <img src="event 3.png" alt="Category 3">
+        <p class="seat-category-title">Kids Sudoku Championship by MALSAR</p>
+    </div>
+    <div class="seat-category">
+        <img src="event 4.png" alt="Category 4">
+        <p class="seat-category-title">Kisi Ko Batana Mat Ft. Anubhav Singh Bassi</p>
+    </div>
+    <div class="seat-category">
+        <img src="event 5.png" alt="Category 5">
+        <p class="seat-category-title">Prasad from Vrindavan</p>
+    </div>
+    <script>
+        const images = document.querySelectorAll(".image");
+        let currentIndex = 0;
+
+        function showImage(index) {
+            currentIndex = (currentIndex + index + images.length) % images.length;
+            images.forEach((image, i) => {
+                if (i === currentIndex) {
+                    image.style.transform = "translateX(0)";
+                } else {
+                    image.style.transform = `translateX(${100 * index}%)`;
+                }
+            });
+        }
+
+        function changeImage(index) {
+            showImage(index);
+        }
+
+        showImage(0);
+    </script>
+</body>
+</html>

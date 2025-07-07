@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: rgb(255, 0, 111);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .login-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: left;
+        }
+
+        .login-header {
+            font-size: 15px;
+            color: rgb(255, 0, 111);
+            margin: 0;
+            padding: 0;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .next-button {
+            width: 98%; 
+            text-align: center;
+        }
+
+        .next-button a {
+            background-color: rgb(255, 0, 111);
+            color: white;
+            padding: 10px 0;
+            border-radius: 5px;
+            font-size: 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .next-button a:hover {
+            background-color: rgb(200, 0, 90);
+        }
+        .logo {
+            position: absolute;
+            top: 50px; 
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 150px; 
+        }
+        .or-divider {
+            display: flex;
+            align-items: center;
+        }
+
+        .or-divider::before,
+        .or-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: darkgray;
+            margin: 0.5em;
+        }
+
+        .or-text {
+            margin: 0 em;
+            font-weight: bold;
+        }
+
+        .login-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .login-buttons .btn {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid darkgray; 
+            border-radius: 5px;
+            cursor: pointer;
+            color: darkgray;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .login-buttons .btn:first-child {
+            margin-right: 10px;
+        }
+
+        .login-buttons .btn.google {
+            background: #fff;
+        }
+
+        .login-buttons .btn.facebook {
+            background: #fff;
+        }
+
+        .btn img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .btn a {
+            text-decoration: none; 
+            color: inherit;
+        }
+
+        .login-links {
+            margin-top: 10px;
+        }
+        body {
+            position: relative;
+        }
+        .container {
+            position: relative;
+        }
+        .bottom-message {
+            color: #fff;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        .bottom-message a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="splash_icon.png" alt="Your Logo">
+    <div class="login-box">
+        <h2 class="login-header">Create your account</h2>
+        <form action="your-login-action.php" method="POST">
+            <input type="text" name="name" placeholder="Name" required><br>
+            <input type="email" name="email" placeholder="Email Address" required><br>
+            <input type="password" name "password" placeholder="Password" required>
+            <input type="password" name "password" placeholder="Confirm Password" required><br><br>
+            <div class="next-button">
+                <a href="login page.html">Sign Up</a>
+            </div><br>
+            <div class="or-divider">
+                <span class="or-text">or</span>
+            </div>
+            <div class="login-buttons">
+                    <a class="btn google" href="https://www.google.com">
+                    <img src="google.png" alt="Google Logo">
+                    <span>Google</span>
+                    </a>
+                    <a class="btn facebook" href="https://www.facebook.com">
+                    <img src="facebook.png" alt="Facebook Logo">
+                    <span>Facebook</span>
+                    </a>
+            </div>
+        </form>
+    </div>
+    <div class="bottom-message">
+        <p>
+            Already have an account? <a href="login page.html">Login</a> here
+        </p>
+    </div>
+</body>
+</html>
